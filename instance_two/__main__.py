@@ -1,10 +1,20 @@
-"""An AWS Python Pulumi program"""
-
 import pulumi
-from pulumi_aws import s3
+import pulumi_aws as aws
 
-# Create an AWS resource (S3 Bucket)
-bucket = s3.BucketV2('my-bucket')
+config = pulumi.Config("myapp")
+ami_id = config.require("ami")
+instance = config.require("instance")
 
-# Export the name of the bucket
-pulumi.export('bucket_name', bucket.id)
+
+# Create EC2 instance
+ec2_instance = aws.ec2.Instance("user-instance",
+    ami=ami_id,
+    instance_type=instance,
+    tags={"Name": "fredirck-instance-two",
+          "Owner": "fredricklitvin"
+          }
+)
+
+# Export instance details
+pulumi.export("instance_id", ec2_instance.id)
+pulumi.export("instance_public_ip", ec2_instance.public_ip)
