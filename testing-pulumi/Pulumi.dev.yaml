@@ -1,4 +1,0 @@
-config:
-  aws:region: us-east-1
-  myapp:ami: ami-085ad6ae776d8f09c
-  myapp:instance: t2.micro
