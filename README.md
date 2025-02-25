@@ -7,8 +7,10 @@ This project is a self-service AWS resource provisioning tool designed to automa
 Installation
 
 Prerequisites
-Before running the project, ensure you have the following installed:
+open ports:
+make sure port 8501 is open and allows access
 
+Before running the project, ensure you have the following installed:
 Python 3.9+
 AWS CLI 
 Boto3 (AWS SDK for Python)
@@ -33,21 +35,26 @@ Features
 
 EC2 Management
 List Instances: Display EC2 instances created by the tool.
+
 Create Instances:
 Choose between t3.nano and t4g.nano instance types.
 Select Amazon Linux or Ubuntu AMI.
 Restrict instance creation to a maximum of two running instances.
+
 Manage Instances:
 Start, stop, or delete instances created by the tool.
 
 S3 Bucket Management
 List Buckets: Display S3 buckets created through the tool.
+
 Create Buckets:
 Choose between public and private access.
 Requires confirmation for public bucket creation.
+
 Upload Files: Upload files only to buckets created through the tool.
 
 Route 53 DNS Management
 Create Hosted Zones: Create new DNS zones in Route 53.
+
 Manage DNS Records: Add, update, or delete DNS records for hosted zones created by the tool.
 
