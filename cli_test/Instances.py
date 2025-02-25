@@ -3,13 +3,13 @@ import streamlit as st
 import boto3
 import botocore
 import botocore.exceptions
-import  botocore.errorfactory
+import botocore.errorfactory
 
 
 ec2 = boto3.resource('ec2')
 
 
-max_instances = 2
+
 
 
 def list_instances():
@@ -109,6 +109,8 @@ create_instance_values = {
     "type": None,
     "ami": None
 }
+
+max_instances = 2
 st.title("create a new instance")
 with st.form(key="instance_form"):
     create_instance_values["name"] = st.text_input("Enter your name:")
