@@ -4,7 +4,7 @@ import boto3
 import botocore
 import botocore.exceptions
 import  botocore.errorfactory
-from Tools.scripts.win_add2path import modify
+
 
 ec2 = boto3.resource('ec2')
 
