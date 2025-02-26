@@ -18,7 +18,7 @@ def list_instances():
         Filters=[
             {'Name': 'tag:Owner', 'Values': ['fredricklitvin']},
             {'Name': 'tag:MadeWithCli', 'Values': ['yes']},
-            {'Name': 'instance-state-name', 'Values': ['running', 'stopped', 'stopping']}
+            {'Name': 'instance-state-name', 'Values': ['running', 'stopped', 'stopping','Pending']}
         ]
     )
     )
